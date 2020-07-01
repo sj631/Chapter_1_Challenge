@@ -1,12 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    
-    public void LoadScene(int sceneNum) {
+    public int sceneNum;
+    private void Awake()
+    {
+        GetComponent<Button>().onClick.AddListener(LoadNewScene);
+    }
+
+    public void LoadNewScene()
+    {
         SceneManager.LoadScene(sceneNum);
     }
 }
